@@ -65,6 +65,23 @@ header p {
   font-size: 1.1em;
 }
 
+/* Contenitore delle sezioni */
+.section-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Righe */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+}
+
+/* Sezioni standard */
 section {
   background: rgba(20, 20, 20, 0.6);
   backdrop-filter: blur(6px);
@@ -72,11 +89,18 @@ section {
   border-radius: 12px;
   border-top: 2px solid rgba(0, 255, 150, 0.4);
   padding: 20px;
-  margin: 20px;
+  flex: 1 1 48%;
   transition: transform 0.3s, background-color 0.3s;
   color: #e0ffe0;
+  box-sizing: border-box;
 }
 
+/* Sezioni che occupano tutta la riga */
+.full-width {
+  flex: 1 1 100%;
+}
+
+/* Hover e animazioni */
 section.appear {
   opacity: 1;
 }
@@ -88,10 +112,16 @@ section:hover {
 }
 
 /* Accordion */
+.accordion {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 10px;
+}
+
 .accordion h3 {
   background-color: #333;
   color: white;
-  padding: 15px;
+  padding: 15px 20px;
   cursor: pointer;
   font-size: 1.1em;
   text-align: left;
@@ -101,6 +131,7 @@ section:hover {
   margin: 10px 0;
   border-radius: 6px;
   transition: background-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
 }
 
 .accordion h3:hover {
@@ -110,12 +141,14 @@ section:hover {
 
 .panel {
   display: none;
-  padding: 0 15px;
+  padding: 10px 20px;
   background-color: rgba(255, 255, 255, 0.05);
   border-left: 3px solid #555;
   margin-bottom: 10px;
   border-radius: 0 0 6px 6px;
   color: #ccc;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .panel.show {

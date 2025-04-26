@@ -90,25 +90,21 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         header.classList.remove('intro');
         body.classList.remove('intro-mode');
+        footer.classList.add('show-footer');
+        sections.forEach(section => section.classList.add('appear'));
+    }, 1500); // transizione di intro-mode
 
-        sections.forEach((section, index) => {
-            setTimeout(() => {
-                section.classList.add('appear');
-            }, index * 500);
-        });
+    // Gestione parallax
+    window.addEventListener('scroll', () => {
+        let scrollPosition = window.scrollY;
+        document.querySelector('.parallax').style.transform = `translateY(${scrollPosition * 0.5}px)`;
+    });
 
-        setTimeout(() => {
-            footer.style.display = 'block';
-        }, sections.length * 200 + 500);
-    }, 6000); 
-});
-
-// Gestione accordion
-document.addEventListener('DOMContentLoaded', function () {
-    const acc = document.querySelectorAll('.accordion h3');
-    acc.forEach(function (element) {
-        element.addEventListener('click', function () {
-            const panel = this.nextElementSibling;
+    // Accordion
+    const accordions = document.querySelectorAll('.accordion h3');
+    accordions.forEach(accordion => {
+        accordion.addEventListener('click', () => {
+            const panel = accordion.nextElementSibling;
             panel.classList.toggle('show');
         });
     });
