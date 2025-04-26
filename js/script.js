@@ -1,52 +1,115 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('header');
-  const body = document.body;
-  const sections = document.querySelectorAll('section');
-  const footer = document.querySelector('footer');
+    const header = document.querySelector('header');
+    const body = document.body;
+    const sections = document.querySelectorAll('section');
+    const footer = document.querySelector('footer');
+    const nome = document.getElementById('nome');
+    const typing = document.getElementById('typing');
 
-  // Attiva intro
-  header.classList.add('intro');
-  body.classList.add('intro-mode');
+    const nomeTesto = "Nome Cognome"; // <-- cambia con il tuo
+    const qualificaTesto = "Tecnico Informatico / Software Engineer";
 
-  // Dopo 2 secondi, rimuovi l'intro e avvia le animazioni delle sezioni
-  setTimeout(() => {
-      header.classList.remove('intro');
-      body.classList.remove('intro-mode');
+    let index = 0;
 
-      // Fa apparire le sezioni una alla volta
-      sections.forEach((section, index) => {
-          setTimeout(() => {
-              section.classList.add('appear');
-          }, index * 500);
-      });
+    function typeNome() {
+        if (index < nomeTesto.length) {
+            nome.innerHTML += nomeTesto.charAt(index);
+            index++;
+            setTimeout(typeNome, 100); // battitura lenta per il nome
+        } else {
+            index = 0;
+            setTimeout(typeQualifica, 800);
+        }
+    }
 
-      // Mostra il footer alla fine
-      setTimeout(() => {
-          footer.style.display = 'block';
-      }, sections.length * 200 + 500);
+    function typeQualifica() {
+        if (index < qualificaTesto.length) {
+            typing.innerHTML += qualificaTesto.charAt(index);
+            index++;
+            setTimeout(typeQualifica, 50); // battitura più veloce per la qualifica
+        }
+    }
 
-  }, 2000);
-});
+    typeNome();
 
-// Aggiunge effetto "appear" alle sezioni in scroll
-window.addEventListener('scroll', function () {
-  const sections = document.querySelectorAll('section');
-  const windowHeight = window.innerHeight;
-  sections.forEach(function (section) {
-      const sectionTop = section.getBoundingClientRect().top;
-      if (sectionTop < windowHeight - 150) {
-          section.classList.add('appear');
-      } else {
-          section.classList.remove('appear');
-      }
-  });
+    // Particelle verde acqua
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let particlesArray = [];
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 3 + 1;
+            this.speedY = Math.random() * 1 + 0.5;
+        }
+        update() {
+            this.y += this.speedY;
+            if (this.y > canvas.height) {
+                this.y = 0;
+                this.x = Math.random() * canvas.width;
+            }
+        }
+        draw() {
+            ctx.fillStyle = 'rgba(0, 255, 150, 0.6)'; // verde acqua
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    function init() {
+        particlesArray = [];
+        for (let i = 0; i < 100; i++) {
+            particlesArray.push(new Particle());
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particlesArray.length; i++) {
+            particlesArray[i].update();
+            particlesArray[i].draw();
+        }
+        requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+
+    window.addEventListener('resize', function () {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        init();
+    });
+
+    setTimeout(() => {
+        header.classList.remove('intro');
+        body.classList.remove('intro-mode');
+
+        sections.forEach((section, index) => {
+            setTimeout(() => {
+                section.classList.add('appear');
+            }, index * 500);
+        });
+
+        setTimeout(() => {
+            footer.style.display = 'block';
+        }, sections.length * 200 + 500);
+    }, 6000); 
 });
 
 // Gestione accordion
-const acc = document.querySelectorAll('.accordion h3');
-acc.forEach(function (element) {
-  element.addEventListener('click', function () {
-      const panel = this.nextElementSibling;
-      panel.style.display = (panel.style.display === "block") ? "none" : "block";
-  });
+document.addEventListener('DOMContentLoaded', function () {
+    const acc = document.querySelectorAll('.accordion h3');
+    acc.forEach(function (element) {
+        element.addEventListener('click', function () {
+            const panel = this.nextElementSibling;
+            panel.classList.toggle('show');
+        });
+    });
 });
