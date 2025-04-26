@@ -168,3 +168,30 @@ footer a {
   color: #6ca0dc;
   text-decoration: none;
 }
+
+/* Language Switcher */
+.language-switch {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.language-switch button, 
+.language-switch select {
+  background: rgba(0, 255, 150, 0.2);
+  border: 1px solid rgba(0, 255, 150, 0.6);
+  border-radius: 8px;
+  padding: 8px 15px;
+  color: #eee;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+  backdrop-filter: blur(4px);
+}
+
+.language-switch button:hover, 
+.language-switch select:hover {
+  background: rgba(0, 255, 150, 0.4);
+}
