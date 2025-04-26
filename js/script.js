@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }, 2000);
 });
 
-// Aggiungere animazioni di apparizione durante lo scorrimento
+// Aggiunge effetto "appear" alle sezioni in scroll
 window.addEventListener('scroll', function () {
   const sections = document.querySelectorAll('section');
   const windowHeight = window.innerHeight;
@@ -42,15 +42,11 @@ window.addEventListener('scroll', function () {
   });
 });
 
-// Funzione per aprire/chiudere l'accordion
+// Gestione accordion
 const acc = document.querySelectorAll('.accordion h3');
 acc.forEach(function (element) {
   element.addEventListener('click', function () {
       const panel = this.nextElementSibling;
-      if (panel.style.display === "block") {
-          panel.style.display = "none";
-      } else {
-          panel.style.display = "block";
-      }
+      panel.style.display = (panel.style.display === "block") ? "none" : "block";
   });
 });
