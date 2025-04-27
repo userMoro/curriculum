@@ -12,47 +12,53 @@
         <canvas id="particles"></canvas>
         <h1 id="nome"></h1>
         <p id="typing"></p>
-        <p><strong>Contatti:</strong> email@example.com | 
-            <a href="https://www.linkedin.com/in/tuo-linkedin" target="_blank">LinkedIn</a> | 
-            <a href="https://github.com/tuo-github" target="_blank">GitHub</a>
+        <p><strong id="contatti">Contatti:</strong> email@example.com | 
+            <a href="https://www.linkedin.com/in/tuo-linkedin" target="_blank" id="linkedin">LinkedIn</a> | 
+            <a href="https://github.com/tuo-github" target="_blank" id="github">GitHub</a>
         </p>
     </header>
 
+    <!-- Pulsanti di lingua -->
+    <div id="language-buttons">
+        <button id="italian-btn"><img src="img/italy-flag.png" alt="Italiano"></button>
+        <button id="english-btn"><img src="img/uk-flag.png" alt="English"></button>
+    </div>
+
     <!-- Profilo -->
     <section id="profilo">
-        <h2>Profilo</h2>
-        <p>Professionista IT con 4 anni di esperienza nella gestione di database, risoluzione di problemi software e supporto tecnico avanzato. Competenze in SQL, Python e automazione dei processi.</p>
+        <h2 id="profilo-title">Profilo</h2>
+        <p id="profilo-text">Professionista IT con 4 anni di esperienza nella gestione di database, risoluzione di problemi software e supporto tecnico avanzato. Competenze in SQL, Python e automazione dei processi.</p>
     </section>
 
     <!-- Competenze -->
     <section id="competenze">
-        <h2>Competenze Tecniche</h2>
+        <h2 id="competenze-title">Competenze Tecniche</h2>
         <ul>
-            <li><strong>Linguaggi di Programmazione:</strong> SQL, Python, JavaScript</li>
-            <li><strong>Database:</strong> MySQL, PostgreSQL, MongoDB</li>
-            <li><strong>Strumenti di Sviluppo:</strong> Git, Docker, Jenkins</li>
-            <li><strong>Metodologie:</strong> Agile, Scrum</li>
-            <li><strong>Cloud:</strong> AWS, Google Cloud</li>
+            <li><strong id="competenze-languages">Linguaggi di Programmazione:</strong> SQL, Python, JavaScript</li>
+            <li><strong id="competenze-databases">Database:</strong> MySQL, PostgreSQL, MongoDB</li>
+            <li><strong id="competenze-tools">Strumenti di Sviluppo:</strong> Git, Docker, Jenkins</li>
+            <li><strong id="competenze-methodologies">Metodologie:</strong> Agile, Scrum</li>
+            <li><strong id="competenze-cloud">Cloud:</strong> AWS, Google Cloud</li>
         </ul>
     </section>
 
     <!-- Esperienza -->
     <section id="esperienza">
-        <h2>Esperienza Lavorativa</h2>
+        <h2 id="esperienza-title">Esperienza Lavorativa</h2>
         <div class="accordion">
-            <h3>Azienda XYZ | Tecnico IT</h3>
+            <h3 id="subsection1-esperienza">Azienda XYZ | Tecnico IT</h3>
             <div class="panel">
                 <ul>
-                    <li>Gestione e ottimizzazione di database SQL per migliorare le performance di sistema, riducendo i tempi di risposta del 20%.</li>
-                    <li>Automazione di processi ripetitivi con Python, riducendo i tempi di elaborazione dei dati del 30%.</li>
-                    <li>Supporto tecnico e troubleshooting avanzato per i team di sviluppo.</li>
+                    <li id="ss1point1-esperienza">Gestione e ottimizzazione di database SQL per migliorare le performance di sistema, riducendo i tempi di risposta del 20%.</li>
+                    <li id="ss1point2-esperienza">Automazione di processi ripetitivi con Python, riducendo i tempi di elaborazione dei dati del 30%.</li>
+                    <li id="ss1point3-esperienza">Supporto tecnico e troubleshooting avanzato per i team di sviluppo.</li>
                 </ul>
             </div>
-            <h3>Azienda ABC | Supporto Tecnico</h3>
+            <h3 id="subsection2-esperienza">Azienda ABC | Supporto Tecnico</h3>
             <div class="panel">
                 <ul>
-                    <li>Analisi e risoluzione di incidenti software e gestione di ticket di supporto.</li>
-                    <li>Collaborazione con team di sviluppo per migliorare l'affidabilità dei sistemi e ridurre il downtime.</li>
+                    <li id="ss2point1-esperienza">Analisi e risoluzione di incidenti software e gestione di ticket di supporto.</li>
+                    <li id="ss2point2-esperienza">Collaborazione con team di sviluppo per migliorare l'affidabilità dei sistemi e ridurre il downtime.</li>
                 </ul>
             </div>
         </div>
@@ -60,13 +66,13 @@
 
     <!-- Istruzione -->
     <section id="istruzione">
-        <h2>Istruzione</h2>
-        <p><strong>Diploma di Tecnico Informatico</strong> - Istituto Tecnico XYZ, 2018</p>
+        <h2 id="istruzione-title">Istruzione</h2>
+        <p id="istruzione-text"><strong>Diploma di Tecnico Informatico</strong> - Istituto Tecnico XYZ, 2018</p>
     </section>
 
     <!-- Certificazioni -->
     <section id="certificazioni">
-        <h2>Certificazioni</h2>
+        <h2 id="certificazioni-title">Certificazioni</h2>
         <ul>
             <li>Certificazione AWS Certified Solutions Architect - 2022</li>
             <li>Certificazione CompTIA A+ - 2021</li>
@@ -75,14 +81,14 @@
 
     <!-- Lingue -->
     <section id="lingue">
-        <h2>Lingue</h2>
-        <p><strong>Inglese:</strong> C1 (Fluente)</p>
-        <p><strong>Italiano:</strong> Madrelingua</p>
+        <h2 id="lingue-title">Lingue</h2>
+        <p><strong id="english">Inglese:</strong> C1 (Fluente)</p>
+        <p><strong id="italian">Italiano:</strong> Madrelingua</p>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/tuo-linkedin">linkedin.com/in/tuo-linkedin</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/tuo-linkedin" id="footer-linkedin">linkedin.com/in/tuo-linkedin</a></p>
     </footer>
 
     <script src="js/script.js"></script>
