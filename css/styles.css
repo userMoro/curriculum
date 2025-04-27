@@ -111,16 +111,30 @@ section:hover {
   font-size: 1.1em;
   text-align: left;
   border: none;
-  width: 100%;
+  width: 98%;
   display: block;
   margin: 10px 0;
   border-radius: 6px;
-  transition: background-color 0.3s, box-shadow 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s transform 0.3s ease;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .accordion h3:hover {
   background-color: #444;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.01);
+}
+
+.accordion h3::after {
+  content: ' ▼';
+  float: right;
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+}
+
+.accordion h3.active::after {
+  transform: rotate(180deg); /* Ruota la freccia quando la sezione è aperta */
 }
 
 .panel {
@@ -135,6 +149,9 @@ section:hover {
 
 .panel.show {
   display: block;
+
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Footer */

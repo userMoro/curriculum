@@ -147,13 +147,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Gestione accordion
 document.addEventListener('DOMContentLoaded', function () {
-    const acc = document.querySelectorAll('.accordion h3');
-    acc.forEach(function (element) {
-        element.addEventListener('click', function () {
-            const panel = this.nextElementSibling;
-            panel.classList.toggle('show');
-        });
-    });
+     const acc = document.querySelectorAll('.accordion h3');
+     acc.forEach(function (element) {
+         element.addEventListener('click', function () {
+             const panel = this.nextElementSibling;
+             panel.classList.toggle('show');
+         });
+     });
 });
 
 window.addEventListener('DOMContentLoaded', () => {
