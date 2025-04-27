@@ -163,7 +163,7 @@ window.addEventListener('DOMContentLoaded', () => {
         github: "GitHub",
 
         profiloTitle: "Profilo",
-        profiloText: "Professionista IT con 4 anni di esperienza nella gestione di database, risoluzione di problemi software e supporto tecnico avanzato. Competenze in SQL, Python e automazione dei processi.\nAffronto ogni opportunità con entusiasmo, soprattutto quando offre la possibilità di acquisire nuove competenze.",
+        profiloText: "Professionista IT con 4 anni di esperienza nella gestione di database, risoluzione di problemi software e supporto tecnico avanzato. Competenze in SQL, Python e automazione dei processi.\nAffronto ogni sfida con entusiasmo, soprattutto quando offre la possibilità di acquisire nuove competenze.",
         
         competenzeTitle: "Competenze Tecniche",
         competenzeLanguages: "Linguaggi di Programmazione:",
@@ -204,7 +204,7 @@ window.addEventListener('DOMContentLoaded', () => {
         github: "GitHub",
 
         profiloTitle: "Profile",
-        profiloText: "IT professional with 4 years of experience in database management, software troubleshooting, and advanced technical support. Skills in SQL, Python, and process automation.\nI approach every opportunity with enthusiasm, especially when it offers a chance to acquire new skills",
+        profiloText: "IT professional with 4 years of experience in database management, software troubleshooting, and advanced technical support. Skills in SQL, Python, and process automation.\nI approach every challenge with enthusiasm, especially when it offers a chance to acquire new skills",
         
         competenzeTitle: "Technical Skills",
         competenzeLanguages: "Programming Languages:",
