@@ -206,3 +206,25 @@ button:hover {
   width: 40px;
   height: 30px;
 }
+
+/* Colore dei link di contatto */
+#linkedin, #github, #certificazioni a, #esperienza a {
+  color: #00FF99; /* Verde acqua/Fluorescente */
+  text-decoration: none; /* Rimuove la sottolineatura */
+  transition: color 0.3s ease;
+}
+
+/* Colore dei link al passaggio del mouse */
+#linkedin:hover, #github:hover, #certificazioni a:hover, #esperienza a:hover {
+  color: #3cca92; /* Un verde acqua più brillante per l'effetto hover */
+}
+
+
+/* Lingua invisibile (questo nasconde i testi in una lingua non selezionata) */
+.english {
+  display: none;
+}
+
+.italian {
+  display: inline;
+}
