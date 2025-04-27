@@ -27,12 +27,33 @@ window.addEventListener('DOMContentLoaded', () => {
             typing.innerHTML += qualificaTesto.charAt(index);
             index++;
             setTimeout(typeQualifica, 50); // battitura più veloce per la qualifica
+        } else {
+            // Al termine dell'animazione di scrittura
+            setTimeout(startPageTransition, 800);
         }
+    }
+
+    function startPageTransition() {
+        // Scrolla la pagina verso l'alto facendo vedere le sezioni
+        header.classList.add('shrink');
+        body.classList.remove('intro-mode');
+
+        // Fa comparire le sezioni con effetto
+        sections.forEach((section, index) => {
+            setTimeout(() => {
+                section.classList.add('appear');
+            }, index * 500);
+        });
+
+        // Mostra il footer
+        setTimeout(() => {
+            footer.style.display = 'block';
+        }, sections.length * 400 + 500);
     }
 
     typeNome();
 
-    // Particelle verde acqua
+    // Particelle
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
     let particlesArray = [];
@@ -85,6 +106,27 @@ window.addEventListener('DOMContentLoaded', () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         init();
+    });
+
+        // Effetto dissolvenza e rimpicciolimento dell'header durante lo scroll
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        const scrollY = window.scrollY;
+        
+        // Più scrolli, più l'header diventa trasparente e piccolo
+        let opacity = 1 - scrollY / 300;
+        let scale = 1 - scrollY / 5500;
+        let blur = scrollY / 100;
+        
+        // Imposta limiti minimi (non negativi)
+        opacity = Math.max(opacity, 0);
+        scale = Math.max(scale, 0.2);
+        blur = Math.min(blur, 5); 
+
+        header.style.opacity = opacity;
+        header.style.transform = `scale(${scale})`;
+        header.style.backdropFilter = `blur(${blur}px)`;
+        header.style.webkitBackdropFilter = `blur(${blur}px)`;
     });
 
     setTimeout(() => {
