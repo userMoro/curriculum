@@ -163,7 +163,7 @@ window.addEventListener('DOMContentLoaded', () => {
         github: "GitHub",
 
         profiloTitle: "Profilo",
-        profiloText: "Professionista IT con 4 anni di esperienza nella gestione di database, risoluzione di problemi software e supporto tecnico avanzato. Competenze in SQL, Python e automazione dei processi.\nAffronto ogni sfida con entusiasmo, soprattutto quando offre la possibilità di acquisire nuove competenze.",
+        profiloText: "Professionista IT con 4 anni di esperienza nella gestione di database, identificazione e risoluzione di problemi software e supporto tecnico avanzato. Competenze in SQL, Python e automazione dei processi.\nAffronto ogni sfida con entusiasmo, soprattutto quando offre la possibilità di acquisire nuove competenze.",
         
         competenzeTitle: "Competenze Tecniche",
         competenzeLanguages: "Linguaggi di Programmazione:",
@@ -176,7 +176,8 @@ window.addEventListener('DOMContentLoaded', () => {
         ss1point1: "Identificazione e risoluzione di bachi Software in ambiente di produzione",
         ss1point2: "Supporto tecnico diretto al cliente, da remoto ed in loco",
         ss1point3: "Gestione, analisi ed ottimizzazione di database SQL",
-        ss1point4: "Reperibilità notturna e trasferte per fornire assistenza diretta durante operazioni di magazzino straordinarie",
+        ss1point4: "Reperibilità notturna",
+        ss1point5: "Trasferte per fornire assistenza diretta durante operazioni di magazzino straordinarie",
         subsection2: "Azienda Teoresi Group (Monaco di Baviera) | Stagista",
         ss2point1: `Studio del progetto <a href="https://github.com/project-chip/connectedhomeip" target="_blank">CHIP ("Matter")</a>, oggetto di tesi, e sviluppo di soluzioni IoT su RaspberryPi, inerenti al progetto`,
         ss2point2: "Realizzazione di automazioni Python e Schell in ambiente Linux",
@@ -217,7 +218,8 @@ window.addEventListener('DOMContentLoaded', () => {
         ss1point1: "Identifying and troubleshooting Software bugs in a production environment",
         ss1point2: "Direct customer technical support, remotely and on-site",
         ss1point3: "SQL database management, analysis and optimization",
-        ss1point4: "Nighttime on-call and travel to provide direct assistance during extraordinary warehouse operations",
+        ss1point4: "Nighttime on-call availability",
+        ss1point5: "Work transfers on-site to provide direct assistance during extraordinary warehouse operations",
         subsection2: "Company Teoresi Group (Munich) | Intern",
         ss2point1: `Study of the <a href="https://github.com/project-chip/connectedhomeip" target="_blank">CHIP ("Matter")</a> project, subject of thesis, and development of IoT solutions on RaspberryPi, inherent to the project`,
         ss2point2: "Implementation of Python and Schell automations in Linux environment.",
@@ -262,6 +264,7 @@ window.addEventListener('DOMContentLoaded', () => {
         document.getElementById('ss1point2-esperienza').innerText = text.ss1point2;
         document.getElementById('ss1point3-esperienza').innerText = text.ss1point3;
         document.getElementById('ss1point4-esperienza').innerText = text.ss1point4;
+        document.getElementById('ss1point5-esperienza').innerText = text.ss1point5;
         document.getElementById('subsection2-esperienza').innerText = text.subsection2;
         document.getElementById('ss2point1-esperienza').innerHTML = text.ss2point1;
         document.getElementById('ss2point2-esperienza').innerText = text.ss2point2;
@@ -302,3 +305,5 @@ document.getElementById('english-btn').addEventListener('click', () => {
     console.log('Cambio lingua a Inglese');
     changeLanguage('en');
 });
+
+
